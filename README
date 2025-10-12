@@ -16,7 +16,9 @@ Each row in your sheet becomes a calendar event — and updates or deletes sync 
 3. Return to the sheet and refresh the page.  
 4. You’ll see a new **“Calendar Sync”** menu at the top — use it to sync events with your Google Calendar.
 
-**Note:** Be sure to read the comments below the data table in the sheet.
+**Note:** 
+- Be sure to read the comments below the data table in the sheet.
+- The first time you click "Calendar Sync" under Calender Sync, a standard security prompt will appear. Rest assured, you have full access to the source code (Code.gs) and can review it to confirm the script only reads data from this sheet and writes events to your default Google Calendar
 
 ## License
 This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
