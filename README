@@ -10,7 +10,7 @@ Each row in your sheet becomes a calendar event — and updates or deletes sync 
 - Adds a custom "Calendar Sync" menu to your sheet to easily sync sheet and calendar
 
 ## Setup
-1. [Click here to make a copy of the sample Google Sheet](https://docs.google.com/spreadsheets/d/1TEmMz2DskQQlrbTtEbCvzEcu7-wZIPb0U5qm7jcKqBo/copy) 
+1. <a href="https://docs.google.com/spreadsheets/d/1TEmMz2DskQQlrbTtEbCvzEcu7-wZIPb0U5qm7jcKqBo/copy" target="_blank">Click here to make a copy of the sample Google Sheet</a>
   This will copy both the spreadsheet and the attached Apps Script.
 2. OPTIONAL: After copying, go to **Extensions → Apps Script** to review the code.  
 3. Return to the sheet and refresh the page.  
@@ -23,4 +23,4 @@ This project is licensed under the MIT License — see the [LICENSE](./LICENSE) 
 
 ## Preview
 Here’s a screenshot showing the Calendar Sync menu in the sheet:
-![Google Sheets Calendar Sync](Demo.jpg)
+![Google Sheets Calendar Sync](images/Demo.jpg)
