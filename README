@@ -20,3 +20,7 @@ Each row in your sheet becomes a calendar event — and updates or deletes sync 
 
 ## License
 This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
+
+## Preview
+Here’s a screenshot showing the Calendar Sync menu in the sheet:
+![Google Sheets Calendar Sync](Demo.jpg)
