@@ -41,6 +41,7 @@ function createCalEvent() {
   const title_col = 0;
   const start_date_col = 3;
   const end_date_col = 4;
+  const status_col = 6;
   const event_id_col = 12;
 
   // aesthetics for event (CAN CHANGE)
@@ -59,10 +60,21 @@ function createCalEvent() {
     const title = entry[title_col];
     const startTime = entry[start_date_col];
     const endTime = entry[end_date_col];
+    const status = entry[status_col];
 
-    /*
-    EVENT DELETION
-    Condition: Event ID exists, but Title and Dates are missing (user cleared the row). We will clear the row for that event ID.
+
+    // REMOVING EVENT FROM CALENDAR AFTER APPLIED TO JOB
+    if (status === 'Applied' && eventId) {
+      try {
+        const event = cal.getEventById(eventId);
+        event.deleteEvent();
+      } catch(e) {
+        console.log(`ERROR: Could not delete event with ID ${eventId}`);
+      }
+    }
+
+    /* EVENT DELETION FROM CAL & SHEET
+    Condition: Event ID exists, but Title and Dates are missing (user cleared the row). We will clear the row for that event ID & remove from calendar
     */
     if (eventId && (!title && !startTime && !endTime)) {
       try {
@@ -85,6 +97,7 @@ function createCalEvent() {
       }
     }
 
+    // UPDATE EXISTING EVENT
     // Condition: Event ID exists, and will attempt to update the calendar event.
     // If event doesn't exist in calendar, we will clear the row.
     if (eventId) {
@@ -101,10 +114,8 @@ function createCalEvent() {
         return;
       }
     }
+    // CREATE NEW EVENT
     else { 
-      /* 
-      IF EVENT DOESN'T EXIST, CREATE EVENT
-      */
       if (title && startTime && endTime) {
         try {
           const newEvent = cal.createEvent(title, startTime, endTime);
